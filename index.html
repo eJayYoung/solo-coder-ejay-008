@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlightRadar Simulator</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>FlightRadar Simulator</h1>
+            <div class="controls">
+                <div class="filter-group">
+                    <label>
+                        <input type="checkbox" id="highAltitudeFilter">
+                        只显示高度 > 8000m
+                    </label>
+                </div>
+                <div class="speed-control">
+                    <button id="speedDown">-</button>
+                    <span id="speedDisplay">1x</span>
+                    <button id="speedUp">+</button>
+                    <span class="speed-label">时间速度</span>
+                </div>
+            </div>
+        </div>
+        <canvas id="mapCanvas"></canvas>
+        <div class="info-panel" id="infoPanel">
+            <div class="panel-header">
+                <span id="flightNumber"></span>
+                <button id="closePanel">×</button>
+            </div>
+            <div class="panel-content">
+                <div class="info-row">
+                    <span class="label">高度:</span>
+                    <span id="altitude"></span>
+                </div>
+                <div class="info-row">
+                    <span class="label">速度:</span>
+                    <span id="speed"></span>
+                </div>
+                <div class="info-row">
+                    <span class="label">航向:</span>
+                    <span id="heading"></span>
+                </div>
+                <div class="info-row">
+                    <span class="label">纬度:</span>
+                    <span id="latitude"></span>
+                </div>
+                <div class="info-row">
+                    <span class="label">经度:</span>
+                    <span id="longitude"></span>
+                </div>
+            </div>
+        </div>
+        <div class="legend">
+            <div class="legend-item">
+                <div class="plane-icon"></div>
+                <span>飞机</span>
+            </div>
+            <div class="legend-item">
+                <div class="selected-icon"></div>
+                <span>选中</span>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
